@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scrolls for Sol: Enoch — Ancient Text Reader for Solana Seeker</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: #0A0A0E; color: #ccc; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.7; padding: 40px 20px; max-width: 900px; margin: 0 auto; }
+        h1 { color: #9945FF; font-size: 2.4em; margin-bottom: 4px; }
+        h2 { color: #14F195; font-size: 1.4em; margin-top: 32px; margin-bottom: 12px; }
+        p { margin-bottom: 16px; }
+        a { color: #9945FF; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .subtitle { color: #888; font-size: 1.1em; margin-bottom: 32px; }
+        .badge { display: inline-block; background: #18182E; border: 1px solid #9945FF; color: #9945FF; padding: 6px 16px; border-radius: 20px; font-size: 0.85em; margin-bottom: 32px; }
+        .features { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 24px 0 40px; }
+        @media (max-width: 600px) { .features { grid-template-columns: 1fr; } }
+        .feature { background: #12121A; border: 1px solid #1a1a2e; border-radius: 12px; padding: 20px; }
+        .feature-icon { font-size: 1.8em; margin-bottom: 8px; }
+        .feature-title { color: #14F195; font-weight: 600; margin-bottom: 4px; }
+        .feature-desc { color: #999; font-size: 0.9em; }
+        .legal-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin: 24px 0; }
+        @media (max-width: 600px) { .legal-grid { grid-template-columns: 1fr 1fr; } }
+        .legal-link { display: block; background: #12121A; border: 1px solid #1a1a2e; border-radius: 8px; padding: 16px; text-align: center; transition: border-color 0.2s; }
+        .legal-link:hover { border-color: #9945FF; text-decoration: none; }
+        .legal-link-title { color: #9945FF; font-weight: 600; font-size: 0.95em; }
+        .legal-link-desc { color: #666; font-size: 0.8em; margin-top: 4px; }
+        .supported { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0 32px; }
+        .supported-item { background: #18182E; color: #ccc; padding: 6px 14px; border-radius: 16px; font-size: 0.85em; }
+        .footer { margin-top: 48px; padding-top: 24px; border-top: 1px solid #1a1a2e; color: #666; font-size: 0.85em; }
+        .hero-cross { font-size: 3em; margin-bottom: 16px; }
+    </style>
+</head>
+<body>
+    <div class="hero-cross">&#128220;</div>
+    <h1>Scrolls for Sol: Enoch</h1>
+    <p class="subtitle">Explore the ancient Book of Enoch on Solana Seeker</p>
+    <span class="badge">Built for Solana Seeker</span>
+
+    <h2>Features</h2>
+    <div class="features">
+        <div class="feature">
+            <div class="feature-icon">&#128220;</div>
+            <div class="feature-title">Ancient Text</div>
+            <div class="feature-desc">All 108 chapters of 1 Enoch from the R.H. Charles 1917 translation, a landmark public domain scholarly work.</div>
+        </div>
+        <div class="feature">
+            <div class="feature-icon">&#128125;</div>
+            <div class="feature-title">Watchers Explorer</div>
+            <div class="feature-desc">Thematic categories exploring the Watchers, fallen angels, cosmic journeys, and otherworldly beings described in the text.</div>
+        </div>
+        <div class="feature">
+            <div class="feature-icon">&#128214;</div>
+            <div class="feature-title">Reading Plans</div>
+            <div class="feature-desc">Curated reading journeys through key themes — apocalyptic visions, angelic hierarchies, astronomical secrets, and more.</div>
+        </div>
+        <div class="feature">
+            <div class="feature-icon">&#128274;</div>
+            <div class="feature-title">Private & Secure</div>
+            <div class="feature-desc">No accounts, no tracking, no analytics. All data stored locally on your device. Your reading life stays private.</div>
+        </div>
+    </div>
+
+    <h2>Supported Features</h2>
+    <div class="supported">
+        <span class="supported-item">108 Chapters</span>
+        <span class="supported-item">Watchers Explorer</span>
+        <span class="supported-item">Reading Plans</span>
+        <span class="supported-item">Daily Streak</span>
+        <span class="supported-item">Favourites</span>
+        <span class="supported-item">Highlights</span>
+        <span class="supported-item">Bookmarks</span>
+        <span class="supported-item">Annotations</span>
+        <span class="supported-item">Cross-References</span>
+        <span class="supported-item">Timeline</span>
+        <span class="supported-item">Watcher Relationship Graph</span>
+        <span class="supported-item">Ge'ez Transliteration</span>
+        <span class="supported-item">AR Constellations</span>
+        <span class="supported-item">Community Annotations</span>
+        <span class="supported-item">Verse of the Day Widget</span>
+        <span class="supported-item">Text-to-Speech</span>
+        <span class="supported-item">Night Mode</span>
+        <span class="supported-item">SIWS Wallet</span>
+        <span class="supported-item">SGT Verification</span>
+        <span class="supported-item">28 Languages</span>
+        <span class="supported-item">TalkBack Accessible</span>
+    </div>
+
+    <h2>Legal Documents</h2>
+    <div class="legal-grid">
+        <a href="privacy.html" class="legal-link">
+            <div class="legal-link-title">Privacy Policy</div>
+            <div class="legal-link-desc">Data practices & rights</div>
+        </a>
+        <a href="terms.html" class="legal-link">
+            <div class="legal-link-title">Terms of Service</div>
+            <div class="legal-link-desc">Usage terms & conditions</div>
+        </a>
+        <a href="copyright.html" class="legal-link">
+            <div class="legal-link-title">Copyright Notice</div>
+            <div class="legal-link-desc">Trademarks & attribution</div>
+        </a>
+        <a href="license.html" class="legal-link">
+            <div class="legal-link-title">License</div>
+            <div class="legal-link-desc">App & open source licenses</div>
+        </a>
+        <a href="disclaimer.html" class="legal-link">
+            <div class="legal-link-title">Disclaimer</div>
+            <div class="legal-link-desc">Risk disclosure</div>
+        </a>
+        <a href="sanctions.html" class="legal-link">
+            <div class="legal-link-title">Sanctions Policy</div>
+            <div class="legal-link-desc">Restricted regions</div>
+        </a>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2026 MidMightBit Games. All rights reserved.</p>
+        <p>Contact: <a href="mailto:aardappvark@proton.me">aardappvark@proton.me</a></p>
+    </div>
+</body>
+</html>
