@@ -40,12 +40,12 @@
 </nav>
 
 <h1>Privacy Policy</h1>
-<p class="subtitle">Last updated: February 2026</p>
+<p class="subtitle">Version 1.1.0 &middot; Last updated: July 2026</p>
 
 <!-- 1. Introduction -->
 <h2>1. Introduction</h2>
 <p>Scrolls for Sol: Enoch ("the App") is an ancient text reader application for Android devices. The App provides access to all 108 chapters of the Book of Enoch (1 Enoch) in the R.H. Charles 1917 translation, along with reading plans, the Watchers Explorer, annotations, highlights, bookmarks, cross-references, a timeline, a Watcher relationship graph, Ge'ez transliteration, AR constellations, and community annotations. Scrolls for Sol: Enoch also offers optional Solana wallet connection for Saga Genesis Token (SGT) verification via the Sign In With Solana (SIWS) protocol.</p>
-<p>This Privacy Policy explains how Scrolls for Sol: Enoch handles information when you use our App. We are committed to protecting your privacy and being transparent about our data practices. As you will read below, Scrolls for Sol: Enoch is designed with a privacy-first architecture: we do not collect, store, transmit, or process any personal data.</p>
+<p>This Privacy Policy explains how Scrolls for Sol: Enoch handles information when you use our App. We are committed to protecting your privacy and being transparent about our data practices. As you will read below, Scrolls for Sol: Enoch is designed with a privacy-first architecture: we do not collect, store, transmit, or process any personal data. The only data that ever leaves your device is an anonymous, aggregate usage count (an event name only) and optional Solana wallet verification &mdash; neither identifies you.</p>
 <p>This policy applies to all users of the Scrolls for Sol: Enoch application, regardless of location or jurisdiction.</p>
 
 <!-- 2. Data Controller -->
@@ -69,14 +69,14 @@
     <li>Device identifiers, advertising IDs, or hardware identifiers</li>
     <li>IP addresses or network information</li>
     <li>Location data (coordinates, GPS, or geolocation)</li>
-    <li>Usage analytics, behavioural data, or interaction logs</li>
+    <li>Personal usage profiles, behavioural tracking, or interaction logs tied to your identity</li>
     <li>Browsing history or app usage patterns</li>
     <li>Crash reports or diagnostic data</li>
     <li>Financial information, wallet balances, or transaction history</li>
     <li>Biometric data of any kind</li>
     <li>Contacts, calendar data, photos, or any other on-device data</li>
 </ul>
-<p>We have no servers, databases, or cloud infrastructure that receive data from the App. There is no backend service, no user accounts, and no data pipeline of any kind.</p>
+<p>We operate no user accounts and no personal-data pipeline. Aside from our anonymous analytics endpoint (see Section 6, which receives only an event name and keeps only aggregate counts) and the optional Solana RPC used for wallet verification, no server receives data from the App, and none of that data identifies you.</p>
 
 <!-- 4. Local Storage -->
 <h2>4. Local Storage</h2>
@@ -141,15 +141,16 @@
 <p>Wallet connection uses the Solana Mobile Wallet Adapter protocol with Sign In With Solana (SIWS). This communication occurs locally between the App and your installed wallet app (e.g., Solflare, Phantom) via Android intents. No data is sent to MidMightBit Games servers.</p>
 
 <h3>5.3 No Other Network Requests</h3>
-<p>Scrolls for Sol: Enoch does not make any other network requests. There are no analytics endpoints, advertising networks, crash reporting services, remote configuration servers, or any other external connections.</p>
+<p>Aside from the optional Solana RPC and the anonymous analytics endpoint described in Section 6, Scrolls for Sol: Enoch makes no other network requests. There are no advertising networks, crash reporting services, remote configuration servers, or third-party analytics SDKs.</p>
 
 <!-- 6. No Accounts, No Analytics, No Advertising, No Tracking -->
-<h2>6. No Accounts, No Analytics, No Advertising, No Tracking</h2>
+<h2>6. Anonymous Analytics, No Accounts, No Advertising, No Cross-App Tracking</h2>
+<p><strong>Anonymous usage analytics.</strong> To understand overall usage and reach, the App sends a small number of anonymous, aggregate events to our own endpoint hosted on Vercel (Vercel Serverless Functions with Vercel Blob storage). When something happens in the App &mdash; for example the app is opened, the disclaimer is accepted, a chapter is read, or a wallet is connected &mdash; the App sends only the <em>name</em> of that event, from a fixed, limited list. It sends nothing else: never your wallet address, a device or user identifier, your bookmarks, highlights, notes, reading position, or any content. Vercel&rsquo;s network derives an approximate country from the connection at the edge; <strong>your IP address is never logged, stored, or processed by us</strong>, and no city- or street-level location is collected. Events are kept only as aggregate counts (per event, per country, per day) and cannot be traced back to you or any device. The totals are publicly viewable at <a href="https://scrollsforsol-enoch-analytics.vercel.app/public-stats">scrollsforsol-enoch-analytics.vercel.app/public-stats</a>. Because the data is anonymous and aggregate and no IP is retained, it is not personal data under GDPR (Recital 26). You can turn it off at any time in the App&rsquo;s Settings &rarr; Privacy &rarr; Anonymous usage statistics.</p>
 <ul>
     <li><strong>No Accounts:</strong> Scrolls for Sol: Enoch does not require or offer user account creation. There is no registration, login, or authentication system (apart from optional wallet verification via SIWS).</li>
-    <li><strong>No Analytics:</strong> We do not use Google Analytics, Firebase Analytics, Mixpanel, Amplitude, or any other analytics platform. We do not collect usage statistics, session data, screen views, or interaction events.</li>
+    <li><strong>No Third-Party Analytics:</strong> We do not use Google Analytics, Firebase Analytics, Mixpanel, Amplitude, or any other third-party analytics SDK. Our only analytics is the first-party anonymous aggregate counter described above.</li>
     <li><strong>No Advertising:</strong> Scrolls for Sol: Enoch contains no advertisements. We do not integrate any advertising SDKs, ad networks, or mediation platforms. There are no ad identifiers collected or shared.</li>
-    <li><strong>No Tracking:</strong> We do not use cookies, tracking pixels, fingerprinting, or any other tracking technology. We do not build user profiles or track behaviour across apps or websites.</li>
+    <li><strong>No Cross-App Tracking:</strong> We do not use cookies, tracking pixels, fingerprinting, or any other tracking technology. We do not build user profiles or track behaviour across apps or websites.</li>
 </ul>
 
 <!-- 7. Permissions -->
@@ -217,7 +218,7 @@
 <ul>
     <li><strong>Encrypted wallet data:</strong> Any wallet verification status is stored using Android's EncryptedSharedPreferences, which employs AES-256 encryption via the Android Keystore system.</li>
     <li><strong>Standard local storage:</strong> Non-sensitive preferences (reading progress, settings, annotations) use Android's standard SharedPreferences, protected by the Android application sandbox which prevents other apps from accessing this data.</li>
-    <li><strong>No remote attack surface:</strong> Because we have no servers, there is no remote database to breach, no API to exploit, and no cloud storage to compromise.</li>
+    <li><strong>Minimal remote attack surface:</strong> We store no personal data remotely; our analytics keeps only anonymous aggregate counts, so there is no personal database to breach.</li>
     <li><strong>Minimal data principle:</strong> We store only what is functionally necessary for the App to operate as expected.</li>
 </ul>
 
@@ -286,7 +287,7 @@
 
 <!-- 14. Do Not Track -->
 <h2>14. Do Not Track</h2>
-<p>Scrolls for Sol: Enoch honours Do Not Track (DNT) browser signals and similar privacy preferences. In practice, this is inherently satisfied because we do not track users in any way, regardless of whether a DNT signal is present. There is no tracking to disable.</p>
+<p>Scrolls for Sol: Enoch honours Do Not Track (DNT) signals and similar privacy preferences. We do not track users across apps or build behavioural profiles. Our only analytics is anonymous and aggregate (see Section 6) and can be turned off at any time in the App&rsquo;s Settings.</p>
 
 <!-- 15. Local Storage Disclosure (ePrivacy Directive) -->
 <h2>15. Local Storage Disclosure (ePrivacy Directive)</h2>
