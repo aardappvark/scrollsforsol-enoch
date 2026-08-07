@@ -40,7 +40,7 @@
 </nav>
 
 <h1>Privacy Policy</h1>
-<p class="subtitle">Version 1.1.0 &middot; Last updated: July 2026</p>
+<p class="subtitle">Version 1.2.0 &middot; Last updated: 7 August 2026</p>
 
 <!-- 1. Introduction -->
 <h2>1. Introduction</h2>
@@ -80,7 +80,7 @@
 
 <!-- 4. Local Storage -->
 <h2>4. Local Storage</h2>
-<p>Scrolls for Sol: Enoch stores a limited amount of functional data locally on your device using Android's SharedPreferences and EncryptedSharedPreferences mechanisms. This data never leaves your device.</p>
+<p>Scrolls for Sol: Enoch stores a limited amount of functional data locally on your device using Android's SharedPreferences and EncryptedSharedPreferences mechanisms. Apart from your device's own Android Backup (see 4.2), this data is not sent to any server of ours.</p>
 
 <h3>4.1 Data Stored Locally</h3>
 <table>
@@ -121,27 +121,28 @@
     </tr>
 </table>
 
-<h3>4.2 No Synchronisation</h3>
-<p>Local data is not synchronised to any server, cloud service, or third-party platform. It exists solely on your device and is fully removed when you uninstall the App or clear its data through your device settings.</p>
+<h3>4.2 No Synchronisation by Us; Android Backup</h3>
+<p>Local data is not synchronised to any server, cloud service, or third-party platform of ours. If Android Backup is enabled on your device, the App's settings and progress data are included in your device's encrypted Google backup, survive uninstalling the App, and may be restored when you reinstall. Wallet data is always excluded from backup. You can exclude the App from backup in Android Settings or delete the backup from your Google account. Clearing the App's data through your device settings removes the local copy.</p>
 
 <!-- 5. Network Requests & Third-Party APIs -->
 <h2>5. Network Requests &amp; Third-Party APIs</h2>
 <p>Scrolls for Sol: Enoch makes minimal network requests, limited to the following:</p>
 
-<h3>5.1 Solana RPC (Wallet Verification Only)</h3>
+<h3>5.1 Solana RPC (Wallet Verification &amp; Optional Pro Purchase/Restore)</h3>
+<p>To verify Seeker Genesis Token status, submit payments, and restore purchases, the App sends your wallet's public address to Solana RPC providers: api.mainnet-beta.solana.com and, as a fallback, solana-rpc.publicnode.com (Allnodes). These providers receive your IP address and the public address. Private keys never leave your wallet.</p>
 <div class="highlight">
-    <p><strong>Endpoint:</strong> api.mainnet-beta.solana.com<br>
-    <strong>Purpose:</strong> Verify Seeker Genesis Token (SGT) ownership when you optionally connect a Solana wallet<br>
-    <strong>Data sent:</strong> Wallet public address only (no PII)<br>
-    <strong>When:</strong> Only when you explicitly initiate wallet connection via SIWS</p>
+    <p><strong>Endpoints:</strong> api.mainnet-beta.solana.com and solana-rpc.publicnode.com (public Solana RPC providers; the App may use either, and falls back from one to the other)<br>
+    <strong>Purpose:</strong> (a) verify Seeker Genesis Token (SGT) ownership when you optionally connect a Solana wallet; and (b) support the optional one-time &ldquo;Illuminated&rdquo; Pro unlock &mdash; fetching a recent blockhash and token-account lookups to build the payment, and reading your wallet&rsquo;s public transaction history to restore a purchase you already made<br>
+    <strong>Data sent:</strong> Your wallet public address and ordinary public-ledger queries (recent blockhash, token account lookups, signature/transaction history for that address). No PII, and never your reading data<br>
+    <strong>When:</strong> Only when you explicitly initiate wallet connection via SIWS, buy the Pro unlock, or tap Restore</p>
 </div>
-<p>A Solana wallet public address is a pseudonymous blockchain identifier. It is not linked to your real-world identity within our App. We do not store, log, or transmit this address to any server we control. The RPC request is made directly from your device to the Solana network.</p>
+<p>A Solana wallet public address is a pseudonymous blockchain identifier. It is not linked to your real-world identity within our App. We do not store, log, or transmit this address to any server we control. These RPC requests are made directly from your device to the third-party RPC providers named above, which operate the public Solana network endpoints; as with any internet request, those providers see the request and the originating IP address, and their own policies apply. Payments themselves are signed and submitted by your own wallet app &mdash; we never take custody of funds.</p>
 
 <h3>5.2 Solana Mobile Wallet Adapter (MWA)</h3>
 <p>Wallet connection uses the Solana Mobile Wallet Adapter protocol with Sign In With Solana (SIWS). This communication occurs locally between the App and your installed wallet app (e.g., Solflare, Phantom) via Android intents. No data is sent to MidMightBit Games servers.</p>
 
 <h3>5.3 No Other Network Requests</h3>
-<p>Aside from the optional Solana RPC and the anonymous analytics endpoint described in Section 6, Scrolls for Sol: Enoch makes no other network requests. There are no advertising networks, crash reporting services, remote configuration servers, or third-party analytics SDKs.</p>
+<p>Aside from the optional Solana RPC endpoints listed in 5.1 and the anonymous analytics endpoint described in Section 6, Scrolls for Sol: Enoch makes no other network requests. There are no advertising networks, crash reporting services, remote configuration servers, or third-party analytics SDKs.</p>
 
 <!-- 6. No Accounts, No Analytics, No Advertising, No Tracking -->
 <h2>6. Anonymous Analytics, No Accounts, No Advertising, No Cross-App Tracking</h2>
@@ -165,18 +166,23 @@
     </tr>
     <tr>
         <td><code>INTERNET</code></td>
-        <td>Solana RPC access</td>
-        <td>Required to communicate with the Solana blockchain for optional wallet/SGT verification. No personal data is transmitted.</td>
+        <td>Solana RPC access &amp; anonymous analytics</td>
+        <td>Required to communicate with the Solana blockchain for optional wallet/SGT verification and for the optional one-time Pro unlock and its restore-from-chain (see 5.1), and to send the anonymous aggregate analytics events described in Section 6. No personal data is transmitted.</td>
     </tr>
     <tr>
         <td><code>CAMERA</code></td>
-        <td>AR constellations (optional)</td>
-        <td>Used exclusively for the optional augmented reality constellations feature, which overlays constellation patterns referenced in the Book of Enoch onto the camera view. <strong>Camera data is never stored, recorded, logged, or transmitted to any server.</strong> The camera feed is processed in real-time on-device only.</td>
+        <td>Constellation overlay (optional)</td>
+        <td>Used exclusively for the optional constellation overlay feature, which draws constellation names referenced in the Book of Enoch over the camera view (an artistic arrangement, not live sky tracking). <strong>Camera data is never stored, recorded, logged, or transmitted to any server.</strong> The camera feed is processed in real-time on-device only.</td>
     </tr>
     <tr>
         <td><code>POST_NOTIFICATIONS</code></td>
         <td>Reading reminders</td>
         <td>Allows the App to send local notifications for reading reminders that you configure. Notifications are generated entirely on-device. No notification data is sent externally.</td>
+    </tr>
+    <tr>
+        <td><code>RECEIVE_BOOT_COMPLETED</code></td>
+        <td>Reminder re-scheduling after restart</td>
+        <td>Lets the App re-schedule your local reading reminders after the device reboots, so configured reminders keep working. Runs entirely on-device; nothing is sent anywhere.</td>
     </tr>
 </table>
 
@@ -282,12 +288,12 @@
 <ul>
     <li><strong>Local data persistence:</strong> Settings, reading progress, bookmarks, highlights, annotations, and preferences persist on your device for as long as the App is installed.</li>
     <li><strong>Deletion:</strong> You can delete all App data at any time by uninstalling Scrolls for Sol: Enoch or clearing the App's data through your device's Settings &gt; Apps &gt; Scrolls for Sol: Enoch &gt; Clear Data.</li>
-    <li><strong>No backups:</strong> We do not back up your data. If your device's system backup includes App data, that is governed by your device manufacturer's and/or Google's backup policies, not ours.</li>
+    <li><strong>Android Backup:</strong> We operate no backup service of our own. If Android Backup is enabled on your device, the App's settings and progress data are included in your device's encrypted Google backup, survive uninstalling the App, and may be restored when you reinstall. Wallet data is always excluded from backup. You can exclude the App from backup in Android Settings or delete the backup from your Google account.</li>
 </ul>
 
 <!-- 14. Do Not Track -->
 <h2>14. Do Not Track</h2>
-<p>Scrolls for Sol: Enoch honours Do Not Track (DNT) signals and similar privacy preferences. We do not track users across apps or build behavioural profiles. Our only analytics is anonymous and aggregate (see Section 6) and can be turned off at any time in the App&rsquo;s Settings.</p>
+<p>We do not track users across apps or build behavioural profiles. Our only analytics is anonymous and aggregate (see Section 6) and can be turned off at any time in the App&rsquo;s Settings.</p>
 
 <!-- 15. Local Storage Disclosure (ePrivacy Directive) -->
 <h2>15. Local Storage Disclosure (ePrivacy Directive)</h2>

@@ -39,7 +39,7 @@
     </nav>
 
     <h1>Sanctions & Restricted Regions</h1>
-    <p class="subtitle">Last updated: February 2026</p>
+    <p class="subtitle">Last updated: 7 August 2026</p>
 
     <div class="warning">
         <p><strong>Important:</strong> Scrolls for Sol: Enoch is not available in certain countries and regions due to international sanctions regulations. Access from restricted jurisdictions is prohibited and will be blocked.</p>
@@ -195,7 +195,7 @@
         </tbody>
     </table>
 
-    <p>This list reflects the current sanctions landscape as of February 2026. Additional Specially Designated Nationals (SDN) and sectoral sanctions may apply to individuals and entities not covered by country-level restrictions.</p>
+    <p>This list reflects the current sanctions landscape as of August 2026. Additional Specially Designated Nationals (SDN) and sectoral sanctions may apply to individuals and entities not covered by country-level restrictions.</p>
 
     <!-- 3. How Geographic Screening Works -->
     <h2>3. How Geographic Screening Works</h2>
@@ -205,8 +205,8 @@
         <li><strong>SIM Operator Country Code (Highest Priority)</strong> — The mobile country code (MCC) registered to the device's SIM card is used to determine the country associated with the user's mobile network operator. This is the most reliable indicator as it reflects the telecommunications registration of the device.</li>
         <li><strong>Network Operator Country Code</strong> — The country code of the network to which the device is currently connected. This may differ from the SIM operator when roaming internationally.</li>
         <li><strong>Device Locale</strong> — The country/region setting configured on the device by the user. While user-configurable, this provides a supplementary geographic signal.</li>
-        <li><strong>Geocoder Reverse Lookup (If Permission Granted)</strong> — If the user has granted coarse location permission to the application, a reverse geocoding lookup is performed to determine the country at the device's approximate location. This uses Android's built-in Geocoder service and requires no network transmission of location data.</li>
     </ol>
+    <p>The application requests <strong>no location permission</strong> and performs no location lookups; only the three device-country signals above are read, and nothing leaves the device.</p>
 
     <div class="highlight">
         <p><strong>Screening Decision:</strong> If <strong>any</strong> of the above signals indicates that the user is located in a restricted jurisdiction, access to Scrolls for Sol: Enoch will be blocked. The application applies a conservative approach — a match on any single signal is sufficient to trigger the restriction.</p>
